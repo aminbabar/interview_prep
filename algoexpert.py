@@ -79,13 +79,14 @@
 # ################################################################################
 
 
+# .reverse has no return value
 
 # Question 3
 ################################################################################
+# O(n) time
+# O(n) space
 def sortedSquaredArray(array):
     # Write your code here.
-    if len(array) == 1:
-        return [array[0] ** 2]
     
     left = 0
     right = len(array) - 1
@@ -93,14 +94,12 @@ def sortedSquaredArray(array):
     sqArr = []
     
     while True:
-        print(left)
-        print(right)
         leftVal = array[left] ** 2
         rightVal = array[right] ** 2
         if left == right:
             sqArr.append(leftVal)
             break
-        if leftVal > rightVal:
+        elif leftVal > rightVal:
             sqArr.append(leftVal)
             left += 1
         else:
@@ -110,7 +109,4 @@ def sortedSquaredArray(array):
     sqArr.reverse()
     return sqArr
         
-
-array = [-1, 2]
-
-print(sortedSquaredArray(array))
+################################################################################
